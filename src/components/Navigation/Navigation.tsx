@@ -7,13 +7,12 @@ import Link from "next/link";
 import hamburger from "../../../public/assets/burgerIcon.png";
 import darkHamburger from "../../../public/assets/burgerIconDark.png";
 import { useState } from "react";
-import { MouseEventHandler } from "react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const handleClick = (e: MouseEventHandler<HTMLImageElement>) => {
-    const name = e.target.name;
+  const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
+    const name = e.currentTarget.getAttribute("name");
 
     if (name === "open") {
       setIsOpen(false);
