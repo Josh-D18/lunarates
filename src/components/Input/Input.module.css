@@ -1,0 +1,5 @@
+.input {
+  @apply text-black font-normal text-center placeholder:text-black border-2 mx-4 mt-4 w-[225px] h-[36px] leading-[14px] tracking-[0.8px] text-[14px] md:w-[300px] md:h-[46px] 2xl:h-[45px] 2xl:w-[260px] 2xl:text-[20px];
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border: 1px solid #000000;
+}

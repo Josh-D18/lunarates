@@ -1,0 +1,9 @@
+.dropdown {
+  @apply text-black w-[102px] h-[34px] text-center border-[2px] border-black cursor-pointer hover:shadow-lg transition active:ease-in-out active:delay-75 active:transition-shadow text-[12px] leading-[14.63px] tracking-[0.7px] md:w-[170px] md:h-[40px] 2xl:w-[200px] 2xl:h-[45px] 2xl:text-[19px];
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.option {
+  @apply text-black bg-gray-300 hover:transition-all;
+}

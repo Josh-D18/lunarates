@@ -1,0 +1,23 @@
+.container {
+  @apply flex justify-between items-center max-w-[276px] w-full max-h-[120px] h-full md:max-w-[600px] md:max-h-[130px] xl:max-h-[180px] 2xl:max-w-[1100px] 2xl:max-h-[220px];
+}
+
+.img {
+  @apply max-w-[100px] max-h-[120px] w-full h-full md:max-w-[150px] md:max-h-[160px] xl:max-h-[200px] xl:max-w-[200px];
+}
+
+.imgHamburger {
+  @apply max-w-[50px] max-h-[50px] h-full w-full transition-shadow delay-75 xl:hidden;
+}
+
+.darkImgHamburger {
+  @apply absolute top-[33px] right-[38px] transition-shadow delay-75 xl:hidden;
+}
+
+.navContainer {
+  @apply bg-white absolute h-screen w-screen top-0 bottom-0 left-0 right-0 overflow-hidden flex-col items-center justify-center transition-shadow delay-75 xl:bg-primary xl:flex xl:w-full xl:h-full xl:relative xl:items-center xl:justify-end xl:flex-row xl:flex-grow-0 xl:flex-shrink xl:flex-[50%];
+}
+
+.link {
+  @apply font-normal leading-[24.38px] tracking-[0.6px] text-center text-primary text-[20px] py-2 hover:text-[23px] transition-all delay-75 xl:text-white xl:odd:px-7 xl:text-[24px] xl:hover:font-bold 2xl:text-[30px] xl:font-thin;
+}
