@@ -1,5 +1,5 @@
 .container {
-  @apply flex items-center justify-between bg-secondary px-4 pb-4 pt-2 max-w-[276px] w-full md:max-w-[600px] md:justify-evenly 2xl:max-w-[1100px];
+  @apply flex items-center justify-between bg-secondary px-4 pb-4 pt-2 max-w-[276px] w-full md:max-w-[600px] md:justify-evenly 2xl:max-w-[1100px] rounded-[10px];
 }
 
 .text {

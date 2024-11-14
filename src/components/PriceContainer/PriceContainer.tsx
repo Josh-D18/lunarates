@@ -10,7 +10,7 @@ const PriceContainer = () => {
       <DisplayContainer
         country="CAD"
         iconImage={icon}
-        price={10}
+        price={100000}
         priceSymbol="$"
       />
     </section>

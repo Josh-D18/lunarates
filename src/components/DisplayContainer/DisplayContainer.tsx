@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import styles from "./DisplayContainer.module.css";
-
+import { formatPrice } from "@/utils/utils";
 interface IDisplay {
   country: string;
   iconImage: StaticImageData;
@@ -10,10 +10,6 @@ interface IDisplay {
 
 const DisplayContainer: React.FC<IDisplay> = (displayContent: IDisplay) => {
   const { country, iconImage, price, priceSymbol } = displayContent;
-
-  const formatPrice: (price: number) => string = (price: number) => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
 
   return (
     <div className={styles.container}>
