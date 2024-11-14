@@ -12,11 +12,11 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
-    const name = e.currentTarget.getAttribute("name");
+    const srcLength = e.currentTarget.src.split("");
 
-    if (name === "open") {
+    if (srcLength.length === 99) {
       setIsOpen(false);
-    } else if (name === "close") {
+    } else if (srcLength.length === 103) {
       setIsOpen(true);
     }
   };
@@ -39,7 +39,6 @@ const Navigation = () => {
         height={30}
         alt="hamburger icon"
         className={`${styles.imgHamburger} ${!isOpen && "hidden"}`}
-        name={"open"}
         onClick={handleClick}
       />
       <ul className={`${styles.navContainer} ${isOpen ? "hidden" : "flex"}`}>
@@ -51,7 +50,6 @@ const Navigation = () => {
           className={`${styles.imgHamburger} ${styles.darkImgHamburger} ${
             isOpen && "hidden"
           }`}
-          name={"close"}
           onClick={handleClick}
         />
         <Link href="/" className={styles.link}>
