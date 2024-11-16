@@ -1,5 +1,6 @@
 import styles from "./Input.module.css";
-
+import { useContext } from "react";
+import { CurrencyContext } from "@/app/page";
 interface IInput {
   currency: string;
   price: number | undefined | string;
@@ -7,6 +8,11 @@ interface IInput {
 
 const InputComponent: React.FC<IInput> = (input: IInput) => {
   const { currency, price } = input;
+  const { setPrice } = useContext(CurrencyContext);
+
+  const handleChange = (event: React.ChangeEventHandler<HTMLInputElement>) => {
+    setPrice(Number(event.target.value));
+  };
 
   return (
     <input
@@ -18,6 +24,7 @@ const InputComponent: React.FC<IInput> = (input: IInput) => {
         price === undefined ? `${price} ${currency}` : `${currency}`
       }`}
       className={styles.input}
+      onChange={handleChange}
     />
   );
 };

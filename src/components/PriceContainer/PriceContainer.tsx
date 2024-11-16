@@ -2,15 +2,20 @@ import DisplayContainer from "../DisplayContainer/DisplayContainer";
 import InputComponent from "../Input/Input";
 import icon from "../../../public/assets/canada.png";
 import styles from "./PriceContainer.module.css";
+import { useContext } from "react";
+import { CurrencyContext } from "@/app/page";
 
 const PriceContainer = () => {
+  const { convertedResult, fromCurrency, toCurrency } =
+    useContext(CurrencyContext);
+
   return (
     <section className={styles.container}>
-      <InputComponent currency="CAD" price="" />
+      <InputComponent currency={fromCurrency} price={fromCurrency} />
       <DisplayContainer
-        country="CAD"
+        country={toCurrency}
         iconImage={icon}
-        price={100000}
+        price={convertedResult}
         priceSymbol="$"
       />
     </section>
