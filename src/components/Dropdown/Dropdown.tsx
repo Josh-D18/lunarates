@@ -5,13 +5,16 @@ interface IDropdown {
   code: string[];
   setDropDownOption: React.Dispatch<React.SetStateAction<string>>;
   selectedOption: string;
+  id: string;
 }
 
 const Dropdown: React.FC<IDropdown> = (options: IDropdown) => {
-  const { code, setDropDownOption, selectedOption } = options;
+  const { code, setDropDownOption, selectedOption, id } = options;
 
-  const handleChange = (event: FormEventHandler<HTMLOptionElement>) => {
-    setDropDownOption(event.target.value);
+  const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setDropDownOption((event.target as HTMLSelectElement).value);
   };
 
   return (
@@ -21,6 +24,7 @@ const Dropdown: React.FC<IDropdown> = (options: IDropdown) => {
       className={styles.dropdown}
       onChange={handleChange}
       value={selectedOption}
+      id={id}
     >
       {code.map((country, id) => {
         return (

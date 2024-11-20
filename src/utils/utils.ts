@@ -19,8 +19,8 @@ const convertCurrency: (
     const data = await fetchData.json();
     return Math.round(data.result);
   } catch (error) {
-    const errorMessage = error;
-    return errorMessage;
+    console.log(error);
+    return 1;
   }
 };
 

@@ -5,3 +5,7 @@
 .text {
   @apply text-white text-center 2xl:text-[19px] 2xl:leading-9 2xl:tracking-[2.1px];
 }
+
+.textContainer {
+  @apply flex flex-col items-center;
+}

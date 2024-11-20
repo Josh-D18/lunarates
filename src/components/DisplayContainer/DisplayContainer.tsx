@@ -2,14 +2,13 @@ import Image, { StaticImageData } from "next/image";
 import styles from "./DisplayContainer.module.css";
 import { formatPrice } from "@/utils/utils";
 interface IDisplay {
-  country: string;
-  iconImage: StaticImageData;
+  iconImage: StaticImageData | string;
   price: number;
   priceSymbol: string;
 }
 
 const DisplayContainer: React.FC<IDisplay> = (displayContent: IDisplay) => {
-  const { country, iconImage, price, priceSymbol } = displayContent;
+  const { iconImage, price, priceSymbol } = displayContent;
 
   return (
     <div className={styles.container}>
@@ -25,7 +24,7 @@ const DisplayContainer: React.FC<IDisplay> = (displayContent: IDisplay) => {
       <div className={styles.priceContainer}>
         <p className={styles.price}>
           {priceSymbol}
-          {formatPrice(price)} {country}
+          {formatPrice(price)}
         </p>
       </div>
     </div>

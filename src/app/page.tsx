@@ -5,16 +5,30 @@ import Navigation from "@/components/Navigation/Navigation";
 import PriceContainer from "@/components/PriceContainer/PriceContainer";
 import { convertCurrency } from "@/utils/utils";
 import { useState, createContext, useEffect } from "react";
+import data from "@/utils/countryData.json";
+
+type IData = {
+  alpha3: string;
+  alpha2: string;
+  currency_name: string;
+  decimal_digits: number;
+  currency_plural: string;
+  rounding: number;
+  symbol: string;
+  symbol_native: string;
+  icon_image: string;
+};
 
 interface ICurrencyData {
   fromCurrency: string;
   toCurrency: string;
   price: number;
   convertedResult: number;
-  setFromCurrency?: React.Dispatch<React.SetStateAction<string>>;
-  setToCurrency?: React.Dispatch<React.SetStateAction<string>>;
-  setPrice?: React.Dispatch<React.SetStateAction<number>>;
-  setConvertedResult?: React.Dispatch<React.SetStateAction<number>>;
+  data: IData[];
+  setFromCurrency: React.Dispatch<React.SetStateAction<string>>;
+  setToCurrency: React.Dispatch<React.SetStateAction<string>>;
+  setPrice: React.Dispatch<React.SetStateAction<number>>;
+  setConvertedResult: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const CurrencyContext = createContext<ICurrencyData>({
@@ -22,11 +36,16 @@ export const CurrencyContext = createContext<ICurrencyData>({
   toCurrency: "",
   price: 0,
   convertedResult: 0,
+  data: data,
+  setFromCurrency: () => {},
+  setToCurrency: () => {},
+  setPrice: () => {},
+  setConvertedResult: () => {},
 });
 
 export default function Home() {
-  const [fromCurrency, setFromCurrency] = useState<string>("CAD");
-  const [toCurrency, setToCurrency] = useState<string>("USD");
+  const [fromCurrency, setFromCurrency] = useState<string>("USD");
+  const [toCurrency, setToCurrency] = useState<string>("CAD");
   const [price, setPrice] = useState<number>(0);
   const [convertedResult, setConvertedResult] = useState<number>(0);
 
@@ -49,13 +68,14 @@ export default function Home() {
             toCurrency,
             price,
             convertedResult,
+            data,
             setFromCurrency,
             setToCurrency,
             setPrice,
             setConvertedResult,
           }}
         >
-          <InputContainer listOfCountries={["CAD", "USD"]} />
+          <InputContainer />
           <PriceContainer />
         </CurrencyContext.Provider>
       </main>
