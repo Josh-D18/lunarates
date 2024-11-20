@@ -1,6 +1,6 @@
 import styles from "./Input.module.css";
 import { useContext } from "react";
-import { CurrencyContext } from "@/app/page";
+import { CurrencyContext } from "@/contexts/CurrencyContext";
 
 interface IInput {
   currency: string;

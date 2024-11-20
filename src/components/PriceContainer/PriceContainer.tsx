@@ -2,7 +2,7 @@ import DisplayContainer from "../DisplayContainer/DisplayContainer";
 import InputComponent from "../Input/Input";
 import styles from "./PriceContainer.module.css";
 import { useContext, useEffect, useState } from "react";
-import { CurrencyContext } from "@/app/page";
+import { CurrencyContext } from "@/contexts/CurrencyContext";
 import { StaticImageData } from "next/image";
 
 const PriceContainer = () => {

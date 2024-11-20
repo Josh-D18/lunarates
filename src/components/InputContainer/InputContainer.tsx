@@ -1,6 +1,6 @@
 import Dropdown from "../Dropdown/Dropdown";
 import styles from "./InputContainer.module.css";
-import { CurrencyContext } from "@/app/page";
+import { CurrencyContext } from "@/contexts/CurrencyContext";
 import { useContext } from "react";
 
 type IData = {
